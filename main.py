@@ -13,5 +13,5 @@ def handle_request(request):
         # Reject the request
 
 # Simulate a request to your application
-fake_request = requests.get("https://example.com")
-handle_request(fake_request)
+# fake_request = requests.get("https://example.com")
+# handle_request(fake_request)

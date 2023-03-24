@@ -1,7 +1,14 @@
 class IPAnalysis:
     def __init__(self, config):
-        self.config = config
+        self.config = config or {}
 
     def is_suspicious(self, request):
-        # Analyze the IP address of the request and determine if it's suspicious
-        pass
+        """Check if the request IP is suspicious."""
+        client_ip = request.remote_addr
+
+        if client_ip in self.config.get("blacklisted_ips", []):
+            return True
+
+        # Implement additional IP analysis logic here (e.g., using IP reputation services)
+
+        return False
