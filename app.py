@@ -1,6 +1,15 @@
 from flask import Flask, request, jsonify
 from bot_defender import BotDefender
 
+config = {
+    "rate_limits": [
+        {"time_window": 60, "max_requests": 10},
+        {"time_window": 3600, "max_requests": 100}
+    ],
+    "whitelisted_ips": ["192.0.2.1"],
+    "blacklisted_ips": ["198.51.100.1"]
+}
+
 app = Flask(__name__)
 
 bot_defender = BotDefender({
