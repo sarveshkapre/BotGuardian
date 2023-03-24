@@ -2,11 +2,7 @@ import time
 from collections import defaultdict
 
 class RateLimiter:
-    def __init__(self, config):
-        self.config = config or {}
-        self.requests = defaultdict(int)
-        self.timestamps = defaultdict(float)
-
+    # ...
     def is_limited(self, request):
         """Check if the request rate limit has been exceeded."""
         if not self.config:
@@ -25,4 +21,5 @@ class RateLimiter:
             self.timestamps[client_ip] = current_time
             self.requests[client_ip] = 1
 
-        return self.requests[client_ip] > self.config.get("max_requests", 30)
+        return self.requests[client_ip] > self.config.get("max_requests", 2)
+
