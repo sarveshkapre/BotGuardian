@@ -1,7 +1,17 @@
 from flask import Flask, request, jsonify
 from bot_defender import BotDefender
 
-config = {
+email_config = {
+    "smtp_server": "smtp.example.com",
+    "smtp_port": 465,
+    "sender_email": "noreply@example.com",
+    "email_password": "your_email_password",
+}
+
+email_client = EmailClient(email_config)
+
+config = {"allowed_user_agents": ["Mozilla/5.0", "Opera/9.80"],
+    "suspicious_user_agents": ["curl", "wget", "Python-urllib"],
     "rate_limits": [
         {"time_window": 60, "max_requests": 10},
         {"time_window": 3600, "max_requests": 100}
