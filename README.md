@@ -1,20 +1,24 @@
-BotDefender
+# BotDefender
+
 BotDefender is a Python library designed to protect web applications from bots and automated attacks. It provides a range of security features such as rate limiting, user agent analysis, IP analysis, and CAPTCHA validation.
 
-Features
+## Features
+
 Rate limiting: Limit the number of requests per IP address within a certain time window.
 User agent analysis: Identify suspicious user agents and block requests from them.
 IP analysis: Analyze and block IP addresses based on a set of configurable rules.
 CAPTCHA validation: Verify user requests using CAPTCHA to prevent automated bots.
 
-Installation
-Install the library using pip:
+## Installation
+
+Install the library using pip
 
 ```bash
 pip install bot-defender
 ```
 
-Usage
+## Usage
+
 Here's a basic example of how to use BotDefender with a Flask application:
 
 ```python
@@ -50,7 +54,8 @@ if __name__ == "__main__":
     app.run()
 ```
 
-Configuration
+## Configuration
+
 BotDefender uses a configuration dictionary to customize its behavior. The following keys can be used:
 
 
@@ -71,7 +76,8 @@ BotDefender uses a configuration dictionary to customize its behavior. The follo
 `site_key`: Your site key for the CAPTCHA service.
 `secret_key`: Your secret key for the CAPTCHA service.
 
-Contributing
+## Contributing
+
 - Fork the repository on GitHub.
 - Clone the forked repository to your local machine.
 - Create a new branch for your changes.
@@ -79,5 +85,6 @@ Contributing
 - Push your changes to your forked repository.
 - Open a pull request to merge your changes into the main repository.
 
-License
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
